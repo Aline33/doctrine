@@ -12,10 +12,10 @@ class HomeController extends AbstractController
     #[Route('/', name: 'index')]
     public function index(SquirrelRepository $squirrelRepository): Response
     {
-        $squirrel = $squirrelRepository->findAll();
+        $squirrels = $squirrelRepository->findAll();
 
         return $this->render('home/index.html.twig', [
-            'squirrel' => $squirrel
+            'squirrels' => $squirrels
         ]);
     }
 }
